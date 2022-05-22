@@ -1,0 +1,294 @@
+@font-face {
+	font-family: "Avenir LT Std";
+	src: local("Avenir LT Std"), url(../fonts/Avenir-LT-Std/Avenir-LT-Std-Light.otf) format("truetype");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	background: #f7f7f7;
+	font-family: "Avenir LT Std", sans-serif;
+}
+
+.container {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+/* -------------------------- NAVBAR -------------------------- */
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 27px 8%;
+	align-items: center;
+	background: #161b45;
+}
+
+nav .logo {
+	color: #fff;
+	font-size: 36px;
+	font-weight: bold;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+	nav .logo img {
+		max-width: 120px;
+	}
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav ul li {
+	text-transform: uppercase;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 16px 20px;
+}
+
+nav ul li a.active {
+	background: linear-gradient(#161b45, #161b45) padding-box, linear-gradient(to right, #d393ef, #2bd4fb) border-box;
+	border-radius: 50em;
+	border: 4px solid transparent;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
+}
+
+/* -------------------------- FORM -------------------------- */
+
+form {
+	max-width: 750px;
+	margin: 4rem auto;
+	font-family: "Avenir LT Std";
+}
+
+form legend {
+	font-size: 3.5em;
+	margin-bottom: 0.5em;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	color: #161b45;
+}
+
+.profile-form .form-control {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+.profile-form .form-control.half {
+	width: calc(50% - 10px);
+}
+
+.profile-form .form-control.half:nth-child(2n-1) {
+	margin-left: 20px;
+}
+
+.profile-form input,
+.profile-form textarea,
+.profile-form select {
+	display: block;
+	width: 100%;
+	outline: 0;
+	resize: none;
+	margin-bottom: 1.8rem;
+	padding: 1rem;
+	border-radius: 53px;
+	border: 1px solid #9e9e9e;
+	color: #757575;
+	background-color: transparent;
+	font-size: 24px;
+}
+
+.profile-form .form-control input.icon {
+	padding-left: 50px;
+	background-size: 15px;
+}
+
+.profile-form .form-control input.icon.icon-user {
+	background: url("../images/icons/username.svg") no-repeat left;
+	background-position-x: 18px;
+}
+
+.profile-form .form-control input.icon.icon-email {
+	background: url("../images/icons/email.svg") no-repeat left;
+	background-position-x: 18px;
+}
+
+.profile-form .form-control input.icon.icon-job {
+	background: url("../images/icons/job.svg") no-repeat left;
+	background-position-x: 18px;
+}
+
+.profile-form .form-control input.icon.icon-country {
+	background: url("../images/icons/country.svg") no-repeat left;
+	background-position-x: 18px;
+}
+
+.profile-form .form-control input.icon.icon-city {
+	background: url("../images/icons/city.svg") no-repeat left;
+	background-position-x: 18px;
+}
+
+.profile-form input + label,
+.profile-form textarea + label,
+.profile-form select + label {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #757575;
+	opacity: 0;
+	transition: top 0.3s ease, opacity 0.3s ease;
+}
+
+.profile-form input:not(:placeholder-shown) + label,
+.profile-form textarea:not(:placeholder-shown) + label,
+.profile-form select:not(:placeholder-shown) + label {
+	opacity: 1;
+	top: -18px;
+	left: 30px;
+}
+
+.profile-form input:focus + label,
+.profile-form textarea:focus + label,
+.profile-form select:focus + label {
+	color: #2c8efe;
+}
+
+.profile-form .form-error {
+	position: relative;
+	top: -25px;
+	left: 600px;
+	text-align: center;
+	color: #db4437;
+	margin: 0;
+	padding: 0;
+	transition: color 0.3s ease;
+}
+
+.required label::after {
+	content: "*";
+}
+
+.btn {
+	all: unset;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 2rem;
+	padding: 1.5rem 0;
+	border-radius: 57px;
+	cursor: pointer;
+}
+
+.submit-btn {
+	background-color: #161b45;
+	color: #fff;
+}
+
+.delete-btn {
+	box-sizing: border-box;
+	background-color: transparent;
+	color: #db4437;
+	border: 3px solid #db4437;
+}
+
+/* -------------------------- GRID -------------------------- */
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	grid-gap: 20px;
+	align-items: stretch;
+}
+
+/* -------------------------- PROFILES PAGE -------------------------- */
+
+.profiles-title {
+	font-size: 3em;
+	font-weight: bold;
+	margin: 4rem 0 2rem;
+}
+
+/* -------------------------- CARD -------------------------- */
+
+.card {
+	display: flex;
+	justify-content: space-around;
+	padding: 4rem 10px;
+	border-radius: 21px;
+	background: #ffffff url("../images/logo/vector.svg") no-repeat 20% bottom;
+	color: #161b45;
+	text-decoration: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.card:hover {
+	box-shadow: 0px 0px 5px 1px #161b45;
+	transition: all 0.3s ease;
+}
+
+.card .card-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	line-height: 1.5;
+	padding-bottom: 2.5rem;
+}
+
+.card .card-title h2 {
+	font-weight: bold;
+	color: #39cffa;
+}
+
+.card .card-contacts {
+	font-size: 1.25em;
+	font-weight: 100;
+	line-height: 1.75;
+	word-break: break-all;
+}
+
+.card .card-contacts .card-logo {
+	position: relative;
+	top: -20px;
+	margin-bottom: 1rem;
+}
+
+.card .card-email {
+	margin-bottom: 10px;
+}
+
+/* -------------------------- UTILS -------------------------- */
+
+.page-title {
+	text-align: center;
+	color: #161b45;
+	margin-top: 2rem;
+}
+
+.p-50 {
+	padding-bottom: 50px;
+}
